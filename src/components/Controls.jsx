@@ -14,11 +14,16 @@ function Controls(){
     dispatch({type: 'SUBTRACTION', payload:{number: inputValElem.current.value},})
     inputValElem.current.value = ""
   }
+
+  const privacy_msg = () => {
+    dispatch({type: 'PRIVACY_MESSAGE'
+  })}
  
   return<>
     <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <button onClick={() => increment()} type="button" className="btn btn-primary">Increment</button>
       <button onClick={() => decrement()} type="button" className="btn btn-success">Decrement</button>
+      <button onClick={privacy_msg} type="button" className="btn btn-warning">Privacy Message</button>
     </div>
     <div className="d-grid gap-2 d-sm-flex justify-content-sm-center custom-input-button">
       <input type="number" ref={inputValElem} className="custom-input" placeholder="Enter Number To Add"/>
