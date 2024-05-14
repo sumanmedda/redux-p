@@ -7,15 +7,15 @@ const INITIAL_VALUE = {
 
 const reducer = (store, action) => {
   if(action.type === 'INCREMENT') {
-    store = {counter : store.counter + 1, privacy : store.privacy}
+    store = {...store, counter : store.counter + 1}
   }else if(action.type === 'DECREMENT') {
-    store = {counter :  store.counter - 1, privacy : store.privacy}
+    store = {...store, counter :  store.counter - 1}
   }else if(action.type === 'ADDITION') {
-    store = {counter :  store.counter + Number(action.payload.number), privacy : store.privacy}
+    store = {...store, counter :  store.counter + Number(action.payload.number)}
   }else if(action.type === 'SUBTRACTION') {
-    store = {counter :  store.counter - Number(action.payload.number), privacy : store.privacy}
+    store = {...store, counter :  store.counter - Number(action.payload.number)}
   }else if(action.type === 'PRIVACY_MESSAGE') {
-    store = {counter : store.counter, privacy :  !store.privacy}
+    store = {...store, privacy :  !store.privacy}
   }
   return store;
 }
